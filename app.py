@@ -16,11 +16,12 @@ def start_play():
     guess_game_starter = games.guess_game
     currency_roulette_starter = games.currency_roulette_game
     bool=False
-    print("Please choose a game to play:")
-    print("1. Memory Game - a sequence of numbers will appear for 1 second and you have to guess it back.")
-    print("2. Guess Game - guess a number and see if you chose like the computer.")
-    print("3. Currency Roulette - try and guess the value of a random amount of USD in ILS")
-    print("Please enter the number of the game you wish to play")
+
+    print('''Please choose a game to play:
+          1. Memory Game - a sequence of numbers will appear for 1 second and you have to guess it back.
+          2. Guess Game - guess a number and see if you chose like the computer.
+          3. Currency Roulette - try and guess the value of a random amount of USD in ILS
+          Please enter the number of the game you wish to play''')
     while bool==False:    
         try:
             game = input()
