@@ -1,6 +1,6 @@
-import memory_game
-import guess_game
-import currency_roulette_game
+import games.memory_game
+import games.guess_game
+import games.currency_roulette_game
 
 
 ## promt func ##
@@ -12,9 +12,9 @@ def welcome():
 
 ## this func will present the game selections ##
 def start_play():
-    memory_game_starter = memory_game
-    guess_game_starter = guess_game
-    currency_roulette_starter = currency_roulette_game
+    memory_game_starter = games.memory_game
+    guess_game_starter = games.guess_game
+    currency_roulette_starter = games.currency_roulette_game
     bool=False
     print("Please choose a game to play:")
     print("1. Memory Game - a sequence of numbers will appear for 1 second and you have to guess it back.")
