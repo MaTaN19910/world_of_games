@@ -1,5 +1,6 @@
 import random
-
+import os
+import time
 import numpy as np 
 bool==True
 ## this func will generate a list of random numbers ##
@@ -47,6 +48,7 @@ def play(game_level_input):
    guess_input_array = [game_level_input]
    numers_rnd_array = [game_level_input]
    numers_rnd_array= generate_sequence(game_level_input)
+   print_arr(numers_rnd_array)
    guess_input_array=get_list_from_user(game_level_input)
    is_list_equal(guess_input_array,numers_rnd_array)
 
@@ -59,6 +61,13 @@ def is_list_equal(guess_input_array, numers_rnd_array):
       print("your guess is right you won!!")
    else:
       print("Your guess is wrong you lose!!")
+
+
+def print_arr(numers_rnd_array):
+   for i in numers_rnd_array:
+      print(numers_rnd_array[i])
+   time.sleep(1)
+   os.system('clear')
 
 
       

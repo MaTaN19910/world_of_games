@@ -55,15 +55,33 @@ def start_play():
 
     if game_input == 1:
         memory_game_starter.play(game_level_input)
+        rematch()
     if game_input == 2:
         guess_game_starter.play(game_level_input)
+        rematch()
     if game_input == 3:
         currency_roulette_starter.play(game_level_input)
+        rematch()
 
 
 
         
-        
+def rematch():
+    end_game = False
+    print("""If you wish to play again please press yes, if you wish to end press no""")
+    while end_game == False:
+            game = input()
+            if game != 'yes' and game != 'no':
+                print("Wrong input please try again")
+            else:
+                end_game=True
+    if game == 'yes':
+        start_play()
+    else:
+        print("Thanks for playing world of games")
+
+def new_func():
+    return False
 
 
 
