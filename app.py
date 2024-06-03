@@ -1,11 +1,12 @@
 import games.memory_game
 import games.guess_game
 import games.currency_roulette_game
-
+from utils import init_score
 
 ## promt func ##
 
 def welcome():
+    init_score()
     print("Please enter your name:")
     name = input()
     print("Hi " + name + " and welcome to the World of Games: The Epic Journey")

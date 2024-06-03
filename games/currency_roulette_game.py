@@ -1,7 +1,7 @@
 #from forex_python.converter import CurrencyRates
 import random
 import requests
-
+from score import add_score
 
 ## this func will convert usd to current ils by the up to date rate ##
 def usd_to_ils_convertor():
@@ -61,6 +61,7 @@ def compare_results(input_guess):
         print("your guess is right you won!!")
     if lower > 0 and input_guess == lower:
         print("your guess is right you won!!")
+        add_score()
     else:
         print("Your guess is wrong you lose")
 

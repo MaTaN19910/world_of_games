@@ -1,5 +1,5 @@
 import random
-
+from score import add_score
 import numpy as np 
 
 ## game starter ##
@@ -37,6 +37,7 @@ def get_guess_from_user(game_level_input):
 def compare_results(random_number, input_guess_int):
     if random_number == input_guess_int:
         print("your guess is right you won!!")
+        add_score()
     else:
         print("Your guess is wrong you lose!!")
 

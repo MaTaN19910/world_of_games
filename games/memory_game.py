@@ -2,6 +2,8 @@ import random
 import os
 import time
 import numpy as np 
+from utils import Screen_cleaner
+from score import add_score
 bool==True
 ## this func will generate a list of random numbers ##
 
@@ -59,6 +61,7 @@ def is_list_equal(guess_input_array, numers_rnd_array):
    array2 = np.array(numers_rnd_array)
    if (array1 == array2).all():
       print("your guess is right you won!!")
+      add_score()
    else:
       print("Your guess is wrong you lose!!")
 
@@ -66,10 +69,9 @@ def is_list_equal(guess_input_array, numers_rnd_array):
 def print_arr(numers_rnd_array):
    for i in numers_rnd_array:
       print(numers_rnd_array[i])
-   time.sleep(1)
-   os.system('clear')
+   Screen_cleaner()
 
 
       
       
-      
+## TODO FIX BUG WITH ARRAY OUT OF BOUNDS
