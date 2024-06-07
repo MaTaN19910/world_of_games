@@ -1,7 +1,13 @@
 import random
-import os
-import time
 import numpy as np 
+
+import sys
+import os
+
+# Add the parent directory to sys.path
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, parent_dir)
+
 from utils import Screen_cleaner
 from score import add_score
 bool==True
@@ -11,8 +17,8 @@ def generate_sequence(game_level_input):
    lower_limit=1
    upper_limit=101
    numers_array=[0 for i in range(game_level_input)] 
-   for i in range(1,game_level_input):
-      numers_array[i-1] = random.randint(lower_limit,upper_limit)
+   for i in range(0,game_level_input):
+      numers_array[i] = random.randint(lower_limit,upper_limit)
    return numers_array
 
 ## this func will get the guess from user ##
@@ -52,26 +58,25 @@ def play(game_level_input):
    numers_rnd_array= generate_sequence(game_level_input)
    print_arr(numers_rnd_array)
    guess_input_array=get_list_from_user(game_level_input)
-   is_list_equal(guess_input_array,numers_rnd_array)
+   is_list_equal(guess_input_array,numers_rnd_array, game_level_input)
 
 ## this func will determine if the player has succeded to guess the right numbers ##
 
-def is_list_equal(guess_input_array, numers_rnd_array):
+def is_list_equal(guess_input_array, numers_rnd_array,game_level_input):
    array1 = np.array(guess_input_array)
    array2 = np.array(numers_rnd_array)
    if (array1 == array2).all():
       print("your guess is right you won!!")
-      add_score()
+      add_score(game_level_input)
    else:
       print("Your guess is wrong you lose!!")
 
 
 def print_arr(numers_rnd_array):
    for i in numers_rnd_array:
-      print(numers_rnd_array[i])
+      print(i)
    Screen_cleaner()
 
 
       
       
-## TODO FIX BUG WITH ARRAY OUT OF BOUNDS
