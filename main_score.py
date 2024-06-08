@@ -22,10 +22,9 @@ app = Flask(__name__)
 def hello(): 
 
     return render_template('index.html',  SCORE=get_score()) 
-
+## all error htmls
 @app.errorhandler(404)
 def page_not_found(e):
-    # note that we set the 404 status explicitly
     return render_template('error.html'), 404
 
 @app.errorhandler(500)

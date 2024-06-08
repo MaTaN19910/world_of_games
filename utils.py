@@ -1,5 +1,7 @@
 import os,time
-
+"""
+This file will init the Scores.txt file and clear the screen func
+"""
 SCORES_FILE_NAME = "Scores.txt"
 
 BAD_RETURN_CODE = 0

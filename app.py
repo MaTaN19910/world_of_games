@@ -65,7 +65,10 @@ def start_play():
         rematch()
 
 
+"""
+This func will prompt the user for a rematch
 
+"""
         
 def rematch():
     end_game = False
