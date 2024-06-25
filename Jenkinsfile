@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    enviorment {
+        DOCKER_HUB_CREDENTIALS = credentials('matandevops-dockerhub')
+    }
+
     stages {
         stage('git checkout') {
             steps {
@@ -15,9 +19,24 @@ pipeline {
                 sh 'docker build -t world_of_games .'
             }
         }
-        stage('run') {
+        stage('Run') {
             steps {
                 sh 'docker run -d -p 8777:8777 world_of_games'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'python tests/e2e.py'
+            }
+        }
+        stage('Finalize'){
+            steps {
+                sh '''
+                    docker container stop world_of_games
+                    echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
+                    docker push matandevops/world_of_games
+                    docker logout
+                '''
             }
         }
     }

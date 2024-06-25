@@ -9,7 +9,7 @@ WEB_CHECK_SUCCESS = 0
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 bool = True
-driver.get('http://127.0.0.1:5000')
+driver.get('http://127.0.0.1:8777')
 score=driver.find_element(By.ID, "score")
 print(score.text)
 """
