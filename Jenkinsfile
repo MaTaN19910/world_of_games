@@ -10,7 +10,7 @@ pipeline {
             steps {
                 git(
                     url: 'https://github.com/MaTaN19910/world_of_games.git'
-                    branch: "${master}"
+                    branch: "master"
                 )
             }
         }
