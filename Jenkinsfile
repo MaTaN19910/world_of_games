@@ -9,7 +9,7 @@ pipeline {
         stage('git checkout') {
             steps {
                 git(
-                    url: 'https://github.com/MaTaN19910/world_of_games.git'
+                    url: 'https://github.com/MaTaN19910/world_of_games.git',
                     branch: "master"
                 )
             }
