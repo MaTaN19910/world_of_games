@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    enviorment {
+    environment {
         DOCKER_HUB_CREDENTIALS = credentials('matandevops-dockerhub')
     }
 
