@@ -29,6 +29,7 @@ pipeline {
                 sh  '''
                     pip install selenium
                     pip install webdriver_manager
+                    apt-get install chrome
                     cd tests/
                     python3 e2e.py
                 '''
