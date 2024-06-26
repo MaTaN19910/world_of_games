@@ -26,7 +26,10 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'python tests/e2e.py'
+                sh  '''
+                    cd tests/
+                    python3 e2e.py
+                '''
             }
         }
         stage('Finalize'){
