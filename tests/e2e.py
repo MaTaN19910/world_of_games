@@ -19,7 +19,8 @@ def test_scores_service():
     bool = True
     driver.get('http://127.0.0.1:8777')
     score=driver.find_element(By.ID, "score")
-    if score < 0 or score > 1000:
+    
+    if int(score.text) < 0 or int(score.text) > 1000:
         bool=False
     return bool
 
