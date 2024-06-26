@@ -28,6 +28,7 @@ pipeline {
             steps {
                 sh  '''
                     pip install selenium
+                    pip install webdriver_manager
                     cd tests/
                     python3 e2e.py
                 '''
