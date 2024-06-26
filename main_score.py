@@ -41,6 +41,6 @@ def page_not_found(e):
 # run the application 
 if __name__ == "__main__": 
     if file_flag == False:
-        app.run(host="0.0.0.0", port=int(5000) ,debug=True)
+        app.run(host="0.0.0.0", port=int(8777) ,debug=True)
     else:
         app.run(page_not_found)
