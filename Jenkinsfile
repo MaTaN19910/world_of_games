@@ -27,9 +27,6 @@ pipeline {
         stage('Test') {
             steps {
                 sh  '''
-                    pip install selenium
-                    pip install webdriver_manager
-                    sudo apt-get install chrome
                     cd tests/
                     python3 e2e.py
                 '''
