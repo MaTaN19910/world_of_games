@@ -11,7 +11,7 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 bool = True
 driver.get('http://127.0.0.1:8777')
 score=driver.find_element(By.ID, "score")
-print(score.text)
+#print(score.text)
 """
 This func will test the score that is saved in txt file from the web page
 """
