@@ -13,7 +13,16 @@ this func will set the new score in Scores.txt file
 """
 def add_score(game_level_input):
     old_score = get_old_score()
-    score_add = game_level_input*3+5
+    score_add = game_level_input*3+5.
+
+    
+
+
+
+
+
+
+
     score_add = score_add+int(old_score)
     ##overide the file ##
     f = open(SCORES_FILE_NAME, "w")
