@@ -11,3 +11,4 @@ MarkupSafe==2.0.1
 Werkzeug==2.0.2
 gunicorn==20.1.0
 pyyaml
+asyncpg
