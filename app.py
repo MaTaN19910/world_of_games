@@ -90,13 +90,4 @@ def new_func():
 
 
 
-
-             
-
-#start play check ##
-#start_play()
-        
-
-## welcome check ##
-#welcome("Matan")
     

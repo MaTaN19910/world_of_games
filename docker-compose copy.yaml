@@ -1,0 +1,47 @@
+# docker-compose.yaml
+
+version: '3'
+services:
+  flask_app:
+    build: ./flask_app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - currency_roulette
+      - currency_app
+      - memory_game
+
+  game1:
+    build: ./games/currency_roulette
+    ports:
+      - "5001:5001"
+
+  game2:
+    build: ./games/guess_game
+    ports:
+      - "5002:5002"
+
+  game3:
+    build: ./games/memory_game
+    ports:
+      - "5003:5003"
+  db: 
+    image: postgres:latest
+    container_name: PostgresCont
+    restart: always
+    environment:
+    - POSTGRES_DB=my_database
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD= ${POSTGRES_PASSWORD}
+    ports:
+    - '5432:5432'
+    volumes:
+    - postgres_db:/var/lib/postgresql/data
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  postgres_db:
+    driver: local
+
+
+
+  
